@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #000;
+
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: white;
+
+}
+
+
+#app {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #000;
+
+}
+
+
+#scene {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#scene canvas {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+/* ==========================================
+   VIGNETTE
+========================================== */
+
+.vignette {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 42%,
+            rgba(0, 0, 0, 0.25) 72%,
+            rgba(0, 0, 0, 0.72) 100%
+        );
+
+    z-index: 5;
+
+}
+
+
+/* ==========================================
+   HUD
+========================================== */
+
+.hud {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    letter-spacing:
+        0.16em;
+
+    font-size:
+        9px;
+
+}
+
+
+/* ==========================================
+   TOP LEFT
+========================================== */
+
+.hud-top-left {
+
+    position: absolute;
+
+    top: 28px;
+    left: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color:
+        rgba(255,255,255,0.58);
+
+}
+
+
+.live-dot {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 0 9px
+        rgba(255,255,255,0.9);
+
+}
+
+
+/* ==========================================
+   TOP RIGHT
+========================================== */
+
+.hud-top-right {
+
+    position: absolute;
+
+    top: 28px;
+    right: 34px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+}
+
+
+/* ==========================================
+   BOTTOM LEFT
+========================================== */
+
+.hud-bottom-left {
+
+    position: absolute;
+
+    left: 35px;
+    bottom: 32px;
+
+}
+
+
+.eyebrow {
+
+    font-size: 8px;
+
+    letter-spacing:
+        0.2em;
+
+    color:
+        rgba(255,255,255,0.38);
+
+    margin-bottom: 8px;
+
+}
+
+
+.heading {
+
+    font-size: 25px;
+
+    font-weight: 200;
+
+    letter-spacing:
+        0.15em;
+
+    color:
+        rgba(255,255,255,0.88);
+
+}
+
+
+.subheading {
+
+    margin-top: 9px;
+
+    font-size: 8px;
+
+    letter-spacing:
+        0.18em;
+
+    color:
+        rgba(255,255,255,0.30);
+
+}
+
+
+/* ==========================================
+   BOTTOM RIGHT
+========================================== */
+
+.hud-bottom-right {
+
+    position: absolute;
+
+    right: 34px;
+    bottom: 32px;
+
+    text-align: right;
+
+}
+
+
+.coordinates {
+
+    font-size: 9px;
+
+    color:
+        rgba(255,255,255,0.52);
+
+    letter-spacing:
+        0.16em;
+
+}
+
+
+/* ==========================================
+   CORNER MARKERS
+========================================== */
+
+.corner {
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    opacity: 0.5;
+
+}
+
+
+.corner::before,
+.corner::after {
+
+    content: "";
+
+    position: absolute;
+
+    background:
+        rgba(255,255,255,0.35);
+
+}
+
+
+/* Horizontal */
+
+.corner::before {
+
+    width: 25px;
+    height: 1px;
+
+}
+
+
+/* Vertical */
+
+.corner::after {
+
+    width: 1px;
+    height: 25px;
+
+}
+
+
+/* Positions */
+
+.corner.top-left {
+
+    left: 34px;
+    top: 32px;
+
+}
+
+
+.corner.top-left::before {
+
+    top: 0;
+    left: 0;
+
+}
+
+
+.corner.top-left::after {
+
+    top: 0;
+    left: 0;
+
+}
+
+
+.corner.top-right {
+
+    right: 34px;
+    top: 32px;
+
+}
+
+
+.corner.top-right::before {
+
+    top: 0;
+    right: 0;
+
+}
+
+
+.corner.top-right::after {
+
+    top: 0;
+    right: 0;
+
+}
+
+
+.corner.bottom-left {
+
+    left: 34px;
+    bottom: 32px;
+
+}
+
+
+.corner.bottom-left::before {
+
+    bottom: 0;
+    left: 0;
+
+}
+
+
+.corner.bottom-left::after {
+
+    bottom: 0;
+    left: 0;
+
+}
+
+
+.corner.bottom-right {
+
+    right: 34px;
+    bottom: 32px;
+
+}
+
+
+.corner.bottom-right::before {
+
+    bottom: 0;
+    right: 0;
+
+}
+
+
+.corner.bottom-right::after {
+
+    bottom: 0;
+    right: 0;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width: 700px) {
+
+    .hud-top-right {
+
+        display: none;
+
+    }
+
+
+    .hud-bottom-right {
+
+        display: none;
+
+    }
+
+
+    .heading {
+
+        font-size: 18px;
+
+    }
+
+
+    .hud-bottom-left {
+
+        left: 20px;
+        bottom: 24px;
+
+    }
+
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Event Horizon</title>
+
+</head>
+
+<body>
+
+    <main id="app">
+
+        <div id="scene"></div>
+
+        <!-- Cinematic darkening -->
+        <div class="vignette"></div>
+
+        <!-- Minimal HUD -->
+        <section class="hud">
+
+            <div class="hud-top-left">
+
+                <span class="live-dot"></span>
+
+                <span>
+                    LIVE GRAVITATIONAL FIELD
+                </span>
+
+            </div>
+
+
+            <div class="hud-top-right">
+
+                OBJECT // A-01
+
+            </div>
+
+
+            <div class="hud-bottom-left">
+
+                <div class="eyebrow">
+                    STELLAR MASS BLACK HOLE
+                </div>
+
+                <div class="heading">
+                    EVENT HORIZON
+                </div>
+
+                <div class="subheading">
+                    INTERACTIVE VISUALIZATION
+                </div>
+
+            </div>
+
+
+            <div class="hud-bottom-right">
+
+                <div class="eyebrow">
+                    POINTER CONTROL
+                </div>
+
+                <div class="coordinates">
+
+                    X:
+                    <span id="xValue">
+                        00
+                    </span>
+
+                    &nbsp;&nbsp;
+
+                    Y:
+                    <span id="yValue">
+                        00
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Corner frame -->
+
+            <div class="corner top-left"></div>
+
+            <div class="corner top-right"></div>
+
+            <div class="corner bottom-left"></div>
+
+            <div class="corner bottom-right"></div>
+
+        </section>
+
+    </main>
+
+
+    <script
+        type="module"
+        src="/src/main.js"
+    ></script>
+
+</body>
+
+</html>
