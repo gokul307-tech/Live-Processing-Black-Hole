@@ -3,7 +3,7 @@ import * as THREE from "three";
 
 export function createDiskParticles() {
 
-    const count = 12000;
+    const count = 15000;
 
 
     const positions =
