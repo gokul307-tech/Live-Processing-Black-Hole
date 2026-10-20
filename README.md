@@ -59,3 +59,26 @@ Live-Processing-Black-Hole/
     └── components/
         ├── blackHole.js
         └── stars.js
+---
+
+## Deploy on Render
+
+This is a static Vite + Three.js application. It does not require a backend server.
+
+### Render settings
+
+- **Service type:** Static Site
+- **Build command:** `npm ci && npm run build`
+- **Publish directory:** `dist`
+- **Environment:** Node.js 22.12 or newer (Render's current Node 22 environment is suitable)
+
+The included `render.yaml` defines these settings for a Render Blueprint deployment. Alternatively, create a new **Static Site** in Render from the GitHub repository and enter the settings above. No environment variables are required by the current source.
+
+### Local build check
+
+```bash
+npm ci
+npm run build
+```
+
+The generated website is written to `dist/`.
